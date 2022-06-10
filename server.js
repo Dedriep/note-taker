@@ -65,12 +65,10 @@ app.delete('/api/notes', (req,res) => {
 
     fs.readFile("./db/db.json", "utf8", (error, results) => {
 
-        
-
-
+        deleteData = {...req.body,}
         fs.writeFile("./db/db.json", JSON.stringify(noteData), (error, results) => {
             if (error) {"error: ",  console.log(error)}
-            else { noteData.filter()
+            else { noteData.filter(deleteData)
 
             }
 
