@@ -61,27 +61,38 @@ app.post('/api/notes', (req, res) => {
 //fs.writefile 
 //array.filter 
 
-app.delete('/api/notes/:id', (req,res) => {
+// app.delete('/api/notes/:id', (req,res) => {
 
-    fs.readFile("./db/db.json", "utf8", (error, results) => {
+//     fs.readFile("./db/db.json", "utf8", (error, results) => {
 
-        fs.writeFile("./db/db.json", JSON.stringify(noteData), (error, results) => {
-            deleteData = {...req.body,}
+//         fs.writeFile("./db/db.json", JSON.stringify(noteData), (error, results) => {
+            
+//             const allNotes = JSON.parse(results);
 
-            if (error) {"error: ",  console.log(error)}
-            else { noteData.filter(deleteData)
+//             if(!results) {
+//                 results = []
+//             }
+            
+//             else{
 
-            }
+//                 deleteData = {...req.body,}
 
-            console.log("result", results);
+//                 if (error) {"error: ",  console.log(error)}
+//                 else { noteData.filter(req)
+    
+//                 }
+    
+//                 console.log("result", results);
+//             }
+         
 
-            res.json(allNotes);
-        });
+//             res.json(allNotes);
+//         });
       
-    });
+//     });
     
 
-})
+// })
 
 app.get('/notes', (req, res) => {
     res.sendFile(path.join(__dirname, './public/notes.html'));
