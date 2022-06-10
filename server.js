@@ -61,12 +61,13 @@ app.post('/api/notes', (req, res) => {
 //fs.writefile 
 //array.filter 
 
-app.delete('/api/notes', (req,res) => {
+app.delete('/api/notes/:id', (req,res) => {
 
     fs.readFile("./db/db.json", "utf8", (error, results) => {
 
-        deleteData = {...req.body,}
         fs.writeFile("./db/db.json", JSON.stringify(noteData), (error, results) => {
+            deleteData = {...req.body,}
+
             if (error) {"error: ",  console.log(error)}
             else { noteData.filter(deleteData)
 
